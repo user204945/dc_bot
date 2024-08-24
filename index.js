@@ -7,6 +7,18 @@ const updateUserAndRole = require('./functions/updateUserAndRole');
 const sqlite3 = require('sqlite3').verbose();
 const dbPath = path.join(__dirname, 'esek.db');
 
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+    res.sendStatus(200);
+});
+
+app.listen(port, () => {
+    console.log(`Sunucu ${port} numaralı portta yürütülüyor.`);
+});
+
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
