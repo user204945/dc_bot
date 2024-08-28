@@ -40,5 +40,14 @@
     }
   },
   "dbPath": "./esek.db",
-  "linkEngel": false
+  "linkEngel": false,
+  "roleSetup": {
+    "fortniteRoleId": "1278370517534904462",
+    "valorantRoleId": "1278370519271346262",
+    "zulaRoleId": "1278370530122137601",
+    "leagueOfLegendsRoleId": "1278370522547228763",
+    "gta5RoleId": "1278370527546708038",
+    "minecraftRoleId": "1278370511591706757",
+    "csgoRoleId": "1278370525160280094"
+  }
 }
