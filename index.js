@@ -281,18 +281,26 @@ client.on('interactionCreate', async (interaction) => {
     if (roleId) {
         const role = interaction.guild.roles.cache.get(roleId);
         if (role) {
-            if (interaction.member.roles.cache.has(roleId)) {
-                await interaction.member.roles.remove(role);
-                await interaction.reply({ content: `Rolünüz ${role.name} kaldırıldı!`, ephemeral: true });
-            } else {
-                await interaction.member.roles.add(role);
-                await interaction.reply({ content: `Rolünüz ${role.name} eklendi!`, ephemeral: true });
+            try {
+                if (interaction.member.roles.cache.has(roleId)) {
+                    await interaction.member.roles.remove(role);
+                    await interaction.reply({ content: `Rolünüz ${role.name} kaldırıldı!`, ephemeral: true });
+                } else {
+                    await interaction.member.roles.add(role);
+                    await interaction.reply({ content: `Rolünüz ${role.name} eklendi!`, ephemeral: true });
+                }
+            } catch (error) {
+                console.error('Rol ekleme/kaldırma hatası:', error);
+                await interaction.reply({ content: 'Bir hata oluştu!', ephemeral: true });
             }
         } else {
             await interaction.reply({ content: 'Rol bulunamadı!', ephemeral: true });
         }
+    } else {
+        await interaction.reply({ content: 'Geçersiz etkileşim!', ephemeral: true });
     }
 });
+
 
 client.on(Events.MessageCreate, async (message) => {
     if (message.author.bot) return;
