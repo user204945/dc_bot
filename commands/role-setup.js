@@ -23,6 +23,22 @@ module.exports = {
                     .setCustomId('toggle_league')
                     .setLabel('League of Legends')
                     .setStyle('Secondary')
+                new ButtonBuilder()
+                    .setCustomId('toggle_csgo')
+                    .setLabel('Counter-Strike 2')
+                    .setStyle('Secondary')
+                new ButtonBuilder()
+                    .setCustomId('toggle_gta5')
+                    .setLabel('GTA V')
+                    .setStyle('Secondary')
+                new ButtonBuilder()
+                    .setCustomId('toggle_minecraft')
+                    .setLabel('Minecraft')
+                    .setStyle('Secondary')
+                new ButtonBuilder()
+                    .setCustomId('toggle_zula')
+                    .setLabel('Zula')
+                    .setStyle('Secondary')
             );
         
         await message.channel.send({ embeds: [embed], components: [row] });
