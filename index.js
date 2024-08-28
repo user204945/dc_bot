@@ -264,11 +264,37 @@ client.on('messageCreate', async message => {
     }
 });
 
+client.on('interactionCreate', async (interaction) => {
+    if (!interaction.isButton()) return;
+
+    const roleIdMap = {
+        'toggle_fortnite': config.fortniteRoleId,
+        'toggle_valorant': config.valorantRoleId,
+        'toggle_league': config.leagueRoleId
+    };
+
+    const roleId = roleIdMap[interaction.customId];
+    if (roleId) {
+        const role = interaction.guild.roles.cache.get(roleId);
+        if (role) {
+            if (interaction.member.roles.cache.has(roleId)) {
+                await interaction.member.roles.remove(role);
+                await interaction.reply({ content: `Rolünüz ${role.name} kaldırıldı!`, ephemeral: true });
+            } else {
+                await interaction.member.roles.add(role);
+                await interaction.reply({ content: `Rolünüz ${role.name} eklendi!`, ephemeral: true });
+            }
+        } else {
+            await interaction.reply({ content: 'Rol bulunamadı!', ephemeral: true });
+        }
+    }
+});
+
 client.on(Events.MessageCreate, async (message) => {
     if (message.author.bot) return;
 
     const greetings = ['selam', 'sa', 'naber', 'merhaba'];
-    const response = 'As nasılsın?';
+    const response = 'Aleyküm selam hoşgeldin!';
 
     if (greetings.includes(message.content.toLowerCase())) {
         message.reply(response);
