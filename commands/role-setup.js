@@ -14,31 +14,31 @@ module.exports = {
                 new ButtonBuilder()
                     .setCustomId('toggle_fortnite')
                     .setLabel('Fortnite')
-                    .setStyle('Secondary'),
+                    .setStyle(ButtonStyle.Secondary),
                 new ButtonBuilder()
                     .setCustomId('toggle_valorant')
                     .setLabel('Valorant')
-                    .setStyle('Secondary'),
+                    .setStyle(ButtonStyle.Secondary),
                 new ButtonBuilder()
                     .setCustomId('toggle_league')
                     .setLabel('League of Legends')
-                    .setStyle('Secondary')
+                    .setStyle(ButtonStyle.Secondary)
                 new ButtonBuilder()
                     .setCustomId('toggle_csgo')
                     .setLabel('Counter-Strike 2')
-                    .setStyle('Secondary')
+                    .setStyle(ButtonStyle.Secondary)
                 new ButtonBuilder()
                     .setCustomId('toggle_gta5')
                     .setLabel('GTA V')
-                    .setStyle('Secondary')
+                    .setStyle(ButtonStyle.Secondary)
                 new ButtonBuilder()
                     .setCustomId('toggle_minecraft')
                     .setLabel('Minecraft')
-                    .setStyle('Secondary')
+                    .setStyle(ButtonStyle.Secondary)
                 new ButtonBuilder()
                     .setCustomId('toggle_zula')
                     .setLabel('Zula')
-                    .setStyle('Secondary')
+                    .setStyle(ButtonStyle.Secondary)
             );
         
         await message.channel.send({ embeds: [embed], components: [row] });
