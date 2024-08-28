@@ -22,19 +22,19 @@ module.exports = {
                 new ButtonBuilder()
                     .setCustomId('toggle_league')
                     .setLabel('League of Legends')
-                    .setStyle(ButtonStyle.Secondary)
+                    .setStyle(ButtonStyle.Secondary),
                 new ButtonBuilder()
                     .setCustomId('toggle_csgo')
                     .setLabel('Counter-Strike 2')
-                    .setStyle(ButtonStyle.Secondary)
+                    .setStyle(ButtonStyle.Secondary),
                 new ButtonBuilder()
                     .setCustomId('toggle_gta5')
                     .setLabel('GTA V')
-                    .setStyle(ButtonStyle.Secondary)
+                    .setStyle(ButtonStyle.Secondary),
                 new ButtonBuilder()
                     .setCustomId('toggle_minecraft')
                     .setLabel('Minecraft')
-                    .setStyle(ButtonStyle.Secondary)
+                    .setStyle(ButtonStyle.Secondary),
                 new ButtonBuilder()
                     .setCustomId('toggle_zula')
                     .setLabel('Zula')
