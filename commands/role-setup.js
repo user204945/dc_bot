@@ -2,7 +2,7 @@ const { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder } = require('
 const config = require('../config.json');
 
 module.exports = {
-    name: 'rol-setup',
+    name: 'role-setup',
     description: 'Rol seçimi için embed mesajı gönderir.',
     async execute(message) {
         const embed = new EmbedBuilder()
