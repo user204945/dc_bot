@@ -6,7 +6,8 @@ module.exports = {
     description: 'Rol seçimi için embed mesajı gönderir.',
     async execute(message) {
         const embed = new EmbedBuilder()
-            .setTitle('Rol Seçimi')
+            .setColor('#000000')
+            .setTitle('Rol Al')
             .setDescription('Lütfen bir veya daha fazla oyun rolü seçin:');
         
         const row1 = new ActionRowBuilder()
