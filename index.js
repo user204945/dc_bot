@@ -268,9 +268,13 @@ client.on('interactionCreate', async (interaction) => {
     if (!interaction.isButton()) return;
 
     const roleIdMap = {
-        'toggle_fortnite': config.fortniteRoleId,
-        'toggle_valorant': config.valorantRoleId,
-        'toggle_league': config.leagueRoleId
+        'toggle_fortnite': config.roleSetup.fortniteRoleId,
+        'toggle_valorant': config.roleSetup.valorantRoleId,
+        'toggle_league': config.roleSetup.leagueOfLegendsRoleId,
+        'toggle_zula': config.roleSetup.zulaRoleId,
+        'toggle_gta5': config.roleSetup.gta5RoleId,
+        'toggle_minecraft': config.roleSetup.minecraftRoleId,
+        'toggle_csgo': config.roleSetup.csgoRoleId
     };
 
     const roleId = roleIdMap[interaction.customId];
