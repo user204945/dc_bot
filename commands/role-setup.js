@@ -9,7 +9,7 @@ module.exports = {
             .setTitle('Rol Seçimi')
             .setDescription('Lütfen bir veya daha fazla oyun rolü seçin:');
         
-        const row = new ActionRowBuilder()
+        const row1 = new ActionRowBuilder()
             .addComponents(
                 new ButtonBuilder()
                     .setCustomId('toggle_fortnite')
@@ -30,7 +30,11 @@ module.exports = {
                 new ButtonBuilder()
                     .setCustomId('toggle_gta5')
                     .setLabel('GTA V')
-                    .setStyle(ButtonStyle.Secondary),
+                    .setStyle(ButtonStyle.Secondary)
+            );
+
+        const row2 = new ActionRowBuilder()
+            .addComponents(
                 new ButtonBuilder()
                     .setCustomId('toggle_minecraft')
                     .setLabel('Minecraft')
@@ -40,7 +44,7 @@ module.exports = {
                     .setLabel('Zula')
                     .setStyle(ButtonStyle.Secondary)
             );
-        
-        await message.channel.send({ embeds: [embed], components: [row] });
+
+        await message.channel.send({ embeds: [embed], components: [row1, row2] });
     }
 };
