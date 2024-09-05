@@ -4,14 +4,12 @@ module.exports = {
     name: 'yardım',
     description: 'Yardım menüsünü gösterir.',
     async execute(message) {
-        
         const embed = new EmbedBuilder()
             .setColor('#000000')
             .setTitle('Yardım Menüsü')
             .setDescription('Komut kategorilerini seçin.')
             .setTimestamp();
 
-        
         const buttonRow = new ActionRowBuilder()
             .addComponents(
                 new ButtonBuilder()
@@ -26,16 +24,15 @@ module.exports = {
                     .setEmoji('🔒') 
             );
 
-        
         const sentMessage = await message.channel.send({ embeds: [embed], components: [buttonRow] });
 
-        
         const filter = interaction => ['eğlence', 'yetkili'].includes(interaction.customId);
         const collector = sentMessage.createMessageComponentCollector({ filter, time: 60000 }); 
 
         collector.on('collect', async interaction => {
             if (!interaction.isButton()) return;
 
+            await interaction.deferUpdate(); // Etkileşimlerin doğru şekilde yanıtlanmasını sağlar
             
             if (interaction.customId === 'eğlence') {
                 const funEmbed = new EmbedBuilder()
@@ -50,10 +47,9 @@ module.exports = {
                     )
                     .setTimestamp();
 
-                await interaction.update({ embeds: [funEmbed], components: [buttonRow] });
+                await interaction.update({ embeds: [funEmbed] });
             }
 
-            
             if (interaction.customId === 'yetkili') {
                 const modEmbed = new EmbedBuilder()
                     .setColor('#FF0000')
@@ -72,13 +68,11 @@ module.exports = {
                     )
                     .setTimestamp();
 
-                await interaction.update({ embeds: [modEmbed], components: [buttonRow] });
+                await interaction.update({ embeds: [modEmbed] });
             }
         });
 
         collector.on('end', collected => {
-            
-            
             const disabledRow = new ActionRowBuilder()
                 .addComponents(
                     new ButtonBuilder()
