@@ -16,24 +16,24 @@ module.exports = {
                     .setCustomId('eğlence')
                     .setLabel('Eğlence')
                     .setStyle(ButtonStyle.Success)
-                    .setEmoji('🎉'), 
+                    .setEmoji('🎉'),
                 new ButtonBuilder()
                     .setCustomId('yetkili')
                     .setLabel('Yetkili')
                     .setStyle(ButtonStyle.Danger)
-                    .setEmoji('🔒') 
+                    .setEmoji('🔒')
             );
 
         const sentMessage = await message.channel.send({ embeds: [embed], components: [buttonRow] });
 
         const filter = interaction => ['eğlence', 'yetkili'].includes(interaction.customId);
-        const collector = sentMessage.createMessageComponentCollector({ filter, time: 60000 }); 
+        const collector = sentMessage.createMessageComponentCollector({ filter, time: 60000 });
 
         collector.on('collect', async interaction => {
             if (!interaction.isButton()) return;
 
-            await interaction.deferUpdate(); // Etkileşimlerin doğru şekilde yanıtlanmasını sağlar
-            
+            await interaction.deferUpdate();
+
             if (interaction.customId === 'eğlence') {
                 const funEmbed = new EmbedBuilder()
                     .setColor('#00FF00')
@@ -47,7 +47,7 @@ module.exports = {
                     )
                     .setTimestamp();
 
-                await interaction.update({ embeds: [funEmbed] });
+                await interaction.update({ embeds: [funEmbed], components: [] });
             }
 
             if (interaction.customId === 'yetkili') {
@@ -68,7 +68,7 @@ module.exports = {
                     )
                     .setTimestamp();
 
-                await interaction.update({ embeds: [modEmbed] });
+                await interaction.update({ embeds: [modEmbed], components: [] });
             }
         });
 
