@@ -47,7 +47,7 @@ module.exports = {
                     )
                     .setTimestamp();
 
-                await interaction.update({ embeds: [funEmbed], components: [] });
+                await interaction.editReply({ embeds: [funEmbed], components: [] });
             }
 
             if (interaction.customId === 'yetkili') {
@@ -68,7 +68,7 @@ module.exports = {
                     )
                     .setTimestamp();
 
-                await interaction.update({ embeds: [modEmbed], components: [] });
+                await interaction.editReply({ embeds: [modEmbed], components: [] });
             }
         });
 
