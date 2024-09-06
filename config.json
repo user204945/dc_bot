@@ -1,0 +1,44 @@
+{
+  "prefix": ".",
+  "botOwnerId": "1068833827532849213",
+  "guildId": "1271534341780017354",
+  "founderRoleId": "1272984960604704879",
+  "slashRoleId": "1272985410032766977",
+  "jailRoleId": "1273044070071140352",
+  "jailLogChannelId": "1273045269209944266",
+  "logChannelId": "1273037891148316682",
+  "registerLogChannelId": "1273270887365218396",
+  "registerChannelId": "1272990791588905090",
+  "unregisteredRoleId": "1272984052667912353",
+  "registeredRoleId": "1272983528799469720",
+  "registerAuthorizedRoleId": "1272984811144876054",
+  "voiceChannelId": "1272986435707867166",
+  "jailHammerRoleId": "1272984591606747270",
+  "kickHammerRoleId": "1273613500199079966",
+  "banHammerRoleId": "1272984402044911666",
+  "advertisementLogChannelId": "1273618249996566631",
+  "inviteLogChannelId": "1273633092778721291",
+  "welcomeChannelId": "1275587656180437023",
+  "botProtection": {
+    "enabled": true,
+    "logChannelId": "1275541073292296315",
+    "authorizedUserIds": [
+      "1068833827532849213",
+      "1258352376251940936"
+    ]
+  },
+  "coinSystem": {
+    "coinRoleIds": {
+      "goldRoleId": "1275923042509258863",
+      "silverRoleId": "1275923043876601897",
+      "bronzeRoleId": "1275923040663896174"
+    },
+    "levelRoleIds": {
+      "wiseRoleId": "1275923045902712945",
+      "masterRoleId": "1275923047408468023",
+      "newbieRoleId": "1275923048738062357"
+    }
+  },
+  "dbPath": "./esek.db",
+  "linkEngel": false
+}
