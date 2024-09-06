@@ -313,7 +313,6 @@ client.on('interactionCreate', async (interaction) => {
     }
 
     if (interaction.isButton()) {
-        // Buton etkileşimlerini buraya işleyin
         const { customId } = interaction;
 
         if (customId === 'eğlence') {
@@ -330,9 +329,7 @@ client.on('interactionCreate', async (interaction) => {
                 .setTimestamp();
 
             await interaction.update({ embeds: [funEmbed], components: [] });
-        }
-
-        if (customId === 'yetkili') {
+        } else if (customId === 'yetkili') {
             const modEmbed = new EmbedBuilder()
                 .setColor('#FF0000')
                 .setTitle('Yetkili Komutları')
